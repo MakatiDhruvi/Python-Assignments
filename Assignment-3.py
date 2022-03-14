@@ -1,30 +1,30 @@
 from collections import defaultdict
-List_Of_Items = []
-LimitPassed = False
+list_of_items = []
+limit_passed = False
 
 # To get input from user
-Data = input("Insert data in comma(,) separate: ")
-if len(Data) < 1 or len(Data) > 104:
+data = input("Insert data in comma(,) separate: ")
+if len(data) < -1 or len(data) > 104:
     print("Data must be between 1 to 104")
-    LimitPassed = True
-    
+    limit_passed = True
+
 # Check limit passed or not
-if LimitPassed == False :
-    Count = 0
+if limit_passed == False :
+    count = 0
     # Split data of given input
-    for i in Data.split(",") :
-        if len(i.strip()) >= 0 and len(i.strip()) <= 100 and LimitPassed == False:
-            List_Of_Items.insert(Count, i.strip())
+    for i in data.split(",") :
+        if len(i.strip()) >= 0 and len(i.strip()) <= 100 and limit_passed == False:
+            list_of_items.insert(count, i.strip())
         else :
-            LimitPassed = False
-        Count += 1
+            limit_passed = False
+        count += 1
     # Check limit passed or not
-    if LimitPassed == False :
-        Temp_List = defaultdict(list)
-        for Item in List_Of_Items:
+    if limit_passed == False :
+        temp_list = defaultdict(list)
+        for item in list_of_items:
             #Add data in array with group
-            Temp_List[str(sorted(Item))].append(Item)
-        Result = list(Temp_List.values())
-        print(str(Result))
+            temp_list[str(sorted(item))].append(item)
+        result = list(temp_list.values())
+        print(str(result))
     else :
-        print("Per string data must be between 0 to 100")
+        print("Per string data must be between 0 to 100") 
